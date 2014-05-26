@@ -18,10 +18,9 @@
 
     <!-- Add custom CSS here -->
     <link href="css/style.css" rel="stylesheet">
-
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".asc-navbar">
 
     <nav class="navbar navbar-default navbar-fixed-top asc-navbar" role="navigation">
         <div class="container">
@@ -38,11 +37,18 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                	  <li><a href="#home">Home</a>
+                	  <li class="active"><a href="#home">Home</a>
                     </li>
                     <li><a href="#problem">Problem</a>
                     </li>
-                    <li><a href="#solution">Solution</a>
+                    <li class="dropdown">
+                    	<a href="#solution">Solution <b class="caret"></b></a>
+                    	<ul class="dropdown-menu">
+						            <li><a href="#step1">Route planning</a></li>
+						            <li><a href="#step2">Matchmaking</a></li>
+						            <li><a href="#step3">Meet & greet</a></li>
+						            <li><a href="#step4">Rate experience</a></li>
+						          </ul>
                     </li>
                     <li><a href="#prototype">Prototype</a>
                     </li>
@@ -123,7 +129,7 @@
     </div>
     <!-- /.content-section-b -->
 
-    <div class="content-section-a">
+    <div class="content-section-a" id="step1">
 
         <div class="container">
 
@@ -147,7 +153,7 @@
     </div>
     <!-- /.content-section-a -->
     
-        <div class="content-section-b">
+        <div class="content-section-b" id="step2">
 
         <div class="container">
 
@@ -171,7 +177,7 @@
     </div>
     <!-- /.content-section-b -->
     
-        <div class="content-section-a">
+        <div class="content-section-a" id="step3">
 
         <div class="container">
 
@@ -195,7 +201,7 @@
     </div>
     <!-- /.content-section-a -->
     
-        <div class="content-section-b">
+        <div class="content-section-b" id="step4">
 
         <div class="container">
 
@@ -241,8 +247,8 @@
                     </form>
 
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <iframe width="396" height="834" src="http://invis.io/2SV4NV75" frameborder="0" allowfullscreen></iframe>
+                <div id="prototypeframe" class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <noscript><iframe width="396" height="834" src="http://invis.io/2SV4NV75" frameborder="0" allowfullscreen></noscript>
                 </div>
             </div>
 
@@ -275,7 +281,11 @@
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
-
+    <script type="text/javascript">
+    $(window).load(function(){
+    	$('#prototypeframe').html('<iframe width="396" height="834" src="http://invis.io/2SV4NV75" frameborder="0" allowfullscreen>');
+    });
+    </script>
 </body>
 
 </html>
